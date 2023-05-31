@@ -9,6 +9,7 @@ WorkingDirectory=__FINALPATH__
 Environment="__LD_PRELOAD__"
 Environment="__YNH_RUBY_LOAD_PATH__"
 Environment="RAILS_ENV=production"
+Environment="DEFAULT_HOST=__DOMAIN__"
 ExecStart=__FINALPATH__/bin/bundle exec sidekiq -C __FINALPATH__/config/sidekiq.yml
 TimeoutSec=15
 Restart=always
