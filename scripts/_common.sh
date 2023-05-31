@@ -9,9 +9,9 @@ pkg_dependencies="ntp ntpdate tzdata curl git imagemagick libssl-dev libreadline
 
 build_pkg_dependencies=""
 
+memory_needed="2560"
 ruby_version=3.2.2
-
-nodejs_version=16
+nodejs_version=18.15.0
 
 # Workaround for Mastodon on Bullseye
 # See https://github.com/mastodon/mastodon/issues/15751#issuecomment-873594463
