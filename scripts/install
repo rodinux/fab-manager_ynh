@@ -194,7 +194,7 @@ pushd $final_path
 	ynh_exec_warn_less ynh_exec_as $app env RAILS_ENV=production DEFAULT_HOST="__DOMAIN__" $ynh_ruby_load_path $ld_preload bin/bundle exec rails db:seed ADMIN_EMAIL="$admin_mail" ADMIN_PASSWORD="$password"
 	ynh_exec_warn_less ynh_exec_as $app env RAILS_ENV=production DEFAULT_HOST="__DOMAIN__" $ynh_ruby_load_path $ld_preload yarn install
 	ynh_exec_warn_less ynh_exec_as $app env RAILS_ENV=production DEFAULT_HOST="__DOMAIN__" $ynh_ruby_load_path $ld_preload bin/webpack
-	#( ynh_exec_warn_less ynh_exec_as $app env RAILS_ENV=production DEFAULT_HOST="__DOMAIN__" $ynh_ruby_load_path $ld_preload bin/bundle exec rails assets:precompile )
+	( ynh_exec_warn_less ynh_exec_as $app env RAILS_ENV=production DEFAULT_HOST="__DOMAIN__" $ynh_ruby_load_path $ld_preload bin/bundle exec rails assets:precompile --quiet )
 	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH yarn cache clean --all
 popd
 
